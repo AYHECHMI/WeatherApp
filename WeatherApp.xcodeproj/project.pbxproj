@@ -27,6 +27,9 @@
 		58A1241228E367D500D5EDE9 /* WeatherAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A1241128E367D500D5EDE9 /* WeatherAppUITestsLaunchTests.swift */; };
 		58C1F2AE28E49F2C0040AFE0 /* CityWeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C1F2AD28E49F2C0040AFE0 /* CityWeatherView.xib */; };
 		58C1F2B028E4AD900040AFE0 /* CityWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C1F2AF28E4AD900040AFE0 /* CityWeatherViewModel.swift */; };
+		58C1F2B628E4C47D0040AFE0 /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C1F2B428E4C47D0040AFE0 /* AddCityViewController.swift */; };
+		58C1F2B728E4C47D0040AFE0 /* AddCityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C1F2B528E4C47D0040AFE0 /* AddCityView.xib */; };
+		58C1F2B928E4C5AE0040AFE0 /* AddCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C1F2B828E4C5AE0040AFE0 /* AddCityViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,9 @@
 		58A1241128E367D500D5EDE9 /* WeatherAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		58C1F2AD28E49F2C0040AFE0 /* CityWeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityWeatherView.xib; sourceTree = "<group>"; };
 		58C1F2AF28E4AD900040AFE0 /* CityWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherViewModel.swift; sourceTree = "<group>"; };
+		58C1F2B428E4C47D0040AFE0 /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
+		58C1F2B528E4C47D0040AFE0 /* AddCityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCityView.xib; sourceTree = "<group>"; };
+		58C1F2B828E4C5AE0040AFE0 /* AddCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +190,9 @@
 		5827746128E3998B00028502 /* AddCity */ = {
 			isa = PBXGroup;
 			children = (
+				58C1F2B328E4C45B0040AFE0 /* ViewController */,
+				58C1F2B228E4C4540040AFE0 /* View */,
+				58C1F2B128E4C44B0040AFE0 /* ViewModel */,
 			);
 			path = AddCity;
 			sourceTree = "<group>";
@@ -261,6 +270,30 @@
 				58A1241128E367D500D5EDE9 /* WeatherAppUITestsLaunchTests.swift */,
 			);
 			path = WeatherAppUITests;
+			sourceTree = "<group>";
+		};
+		58C1F2B128E4C44B0040AFE0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				58C1F2B828E4C5AE0040AFE0 /* AddCityViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		58C1F2B228E4C4540040AFE0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				58C1F2B528E4C47D0040AFE0 /* AddCityView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		58C1F2B328E4C45B0040AFE0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				58C1F2B428E4C47D0040AFE0 /* AddCityViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58A123FB28E367D400D5EDE9 /* LaunchScreen.storyboard in Resources */,
+				58C1F2B728E4C47D0040AFE0 /* AddCityView.xib in Resources */,
 				58C1F2AE28E49F2C0040AFE0 /* CityWeatherView.xib in Resources */,
 				58A123F828E367D400D5EDE9 /* Assets.xcassets in Resources */,
 				5827746828E39A1B00028502 /* CityTableViewCell.xib in Resources */,
@@ -405,10 +439,12 @@
 				5812E85C28E49EB0002AC891 /* CityWeatherViewController.swift in Sources */,
 				58A123F628E367D400D5EDE9 /* WeatherApp.xcdatamodeld in Sources */,
 				5827746728E39A1B00028502 /* CityTableViewCell.swift in Sources */,
+				58C1F2B928E4C5AE0040AFE0 /* AddCityViewModel.swift in Sources */,
 				5812E84D28E3AE00002AC891 /* CityListViewModel.swift in Sources */,
 				5812E85028E44166002AC891 /* Dynamic.swift in Sources */,
 				5827746B28E39F8D00028502 /* CityListViewController.swift in Sources */,
 				58A123EC28E367D400D5EDE9 /* AppDelegate.swift in Sources */,
+				58C1F2B628E4C47D0040AFE0 /* AddCityViewController.swift in Sources */,
 				5812E85628E47FD8002AC891 /* Utilities.swift in Sources */,
 				58C1F2B028E4AD900040AFE0 /* CityWeatherViewModel.swift in Sources */,
 				5812E85228E441A7002AC891 /* Extensions.swift in Sources */,

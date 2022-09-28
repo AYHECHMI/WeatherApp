@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddCityViewController" customModule="WeatherApp" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="zMh-J9-31m" id="vIR-ej-RGZ"/>
+                <outlet property="btnSearch" destination="cjv-Cx-yUv" id="ExJ-5p-nbq"/>
+                <outlet property="tableView" destination="03P-AS-lz4" id="1Kl-iO-NNh"/>
+                <outlet property="txtSearch" destination="hDB-cC-k4a" id="51a-Df-BsY"/>
+                <outlet property="view" destination="BDQ-fq-6QX" id="RLb-UP-Qx4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="BDQ-fq-6QX">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="C3t-qi-HIX">
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search city" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hDB-cC-k4a">
+                    <rect key="frame" x="30" y="103" width="234" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="uKz-Jd-8Tb"/>
+                    </connections>
+                </textField>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="zMh-J9-31m">
+                    <rect key="frame" x="175" y="178" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="j7J-3s-qqb"/>
+                        <constraint firstAttribute="width" constant="40" id="md4-0W-2bd"/>
+                    </constraints>
+                </activityIndicatorView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="03P-AS-lz4">
+                    <rect key="frame" x="19.666666666666657" y="228" width="351" height="562"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="GXw-ha-CRz"/>
+                        <outlet property="delegate" destination="-1" id="J37-f3-xEs"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjv-Cx-yUv">
+                    <rect key="frame" x="274" y="104.66666666666667" width="100" height="31.000000000000014"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="8v0-on-LZE"/>
+                        <constraint firstAttribute="width" constant="100" id="dec-1o-nKK"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Search">
+                        <backgroundConfiguration key="background" cornerRadius="10">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="strokeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </backgroundConfiguration>
+                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="searchButtonPressed:" destination="-1" eventType="touchUpInside" id="sgo-Zg-tT1"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="biF-8w-vvD"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="03P-AS-lz4" firstAttribute="top" secondItem="zMh-J9-31m" secondAttribute="bottom" constant="10" id="6v1-Ko-Gfe"/>
+                <constraint firstItem="C3t-qi-HIX" firstAttribute="trailing" secondItem="biF-8w-vvD" secondAttribute="trailing" id="Bpm-HQ-7Rz"/>
+                <constraint firstItem="biF-8w-vvD" firstAttribute="bottom" secondItem="03P-AS-lz4" secondAttribute="bottom" constant="20" id="CTQ-c2-RCo"/>
+                <constraint firstItem="cjv-Cx-yUv" firstAttribute="centerY" secondItem="hDB-cC-k4a" secondAttribute="centerY" id="MdR-lg-wYq"/>
+                <constraint firstItem="hDB-cC-k4a" firstAttribute="leading" secondItem="biF-8w-vvD" secondAttribute="leading" constant="30" id="RaK-t4-S3b"/>
+                <constraint firstItem="hDB-cC-k4a" firstAttribute="top" secondItem="biF-8w-vvD" secondAttribute="top" constant="56" id="SXG-mI-Enb"/>
+                <constraint firstItem="C3t-qi-HIX" firstAttribute="top" secondItem="BDQ-fq-6QX" secondAttribute="top" id="Tgm-lV-9TW"/>
+                <constraint firstItem="cjv-Cx-yUv" firstAttribute="leading" secondItem="hDB-cC-k4a" secondAttribute="trailing" constant="10" id="Wcq-qs-WLw"/>
+                <constraint firstItem="03P-AS-lz4" firstAttribute="width" secondItem="BDQ-fq-6QX" secondAttribute="width" multiplier="0.9" id="YQx-WX-KPd"/>
+                <constraint firstAttribute="bottom" secondItem="C3t-qi-HIX" secondAttribute="bottom" id="dZX-dp-Up3"/>
+                <constraint firstItem="zMh-J9-31m" firstAttribute="top" secondItem="hDB-cC-k4a" secondAttribute="bottom" constant="41" id="dbf-Pd-PYI"/>
+                <constraint firstItem="zMh-J9-31m" firstAttribute="centerX" secondItem="biF-8w-vvD" secondAttribute="centerX" id="jzN-E1-HFe"/>
+                <constraint firstItem="03P-AS-lz4" firstAttribute="centerX" secondItem="biF-8w-vvD" secondAttribute="centerX" id="kIz-Vh-74O"/>
+                <constraint firstItem="C3t-qi-HIX" firstAttribute="leading" secondItem="biF-8w-vvD" secondAttribute="leading" id="qLk-Cd-hpb"/>
+                <constraint firstItem="hDB-cC-k4a" firstAttribute="width" secondItem="BDQ-fq-6QX" secondAttribute="width" multiplier="0.6" id="whM-2y-osZ"/>
+            </constraints>
+            <point key="canvasLocation" x="-52.307692307692307" y="56.872037914691937"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg" width="540" height="960"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

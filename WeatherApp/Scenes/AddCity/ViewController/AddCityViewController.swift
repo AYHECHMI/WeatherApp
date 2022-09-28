@@ -1,28 +1,31 @@
 //
-//  CityListViewController.swift
+//  AddCityViewController.swift
 //  WeatherApp
 //
-//  Created by Aymen HECHMI on 27/9/2022.
+//  Created by Aymen HECHMI on 28/9/2022.
 //
 
 import UIKit
 
-class CityListViewController: UIViewController {
+class AddCityViewController: UIViewController,UITextFieldDelegate{
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var btnSearch: UIButton!
+    @IBOutlet weak var txtSearch: UITextField!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    let viewModel = AddCityViewModel()
 
-    @IBOutlet weak var cityList: UITableView!
-    
-    let viewModel = CityListViewModel()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        title = "Weather"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
-        cityList.register(UINib.init(nibName: "CityTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-        cityList.bindTo(viewModel.cities)
-        viewModel.getMyLocationWeather()
+        title = "Search City"
+        tableView.register(UINib.init(nibName: "CityTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         
+        tableView.bindTo(viewModel.cities)
+        btnSearch.bindTo(viewModel.buttonEnabled)
+        activityIndicator.bindTo(viewModel.isLoading)
     }
 
 
@@ -36,18 +39,21 @@ class CityListViewController: UIViewController {
     }
     */
     
-    @objc func addTapped(){
-        
-        let addCityVC = AddCityViewController(nibName: "AddCityView", bundle: nil)
-        self.navigationController?.pushViewController(addCityVC, animated: true)
-
+    // MARK: - IBActions
+    @IBAction func searchButtonPressed(_ sender: Any) {
+        viewModel.searchText = txtSearch.text
+        viewModel.getCityWithName()
     }
-
+    // MARK: - textFieldDelegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
 
 // MARK: - UITableViewDataSource & UITableViewDelegate
 
-extension CityListViewController: UITableViewDataSource,UITableViewDelegate {
+extension AddCityViewController: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
@@ -70,10 +76,10 @@ extension CityListViewController: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cityWeatherVc = CityWeatherViewController(nibName: "CityWeatherView", bundle: nil)
-        cityWeatherVc.viewModel.weather = viewModel.cities.value[indexPath.row]
-        self.navigationController?.modalPresentationStyle = .currentContext
-        self.navigationController?.present(cityWeatherVc, animated: true)
+        let cityListVc = navigationController!.viewControllers.filter { $0 is CityListViewController }.first! as? CityListViewController
+     
+        cityListVc?.viewModel.cities.value.append( viewModel.cities.value[indexPath.row])
+        navigationController!.popToViewController(cityListVc!, animated: true)
     }
     
 }
