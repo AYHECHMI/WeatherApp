@@ -20,9 +20,12 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="Jd9-3j-pmk">
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LZM-wW-w3N">
-                    <rect key="frame" x="0.0" y="47" width="390" height="763"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="n6r-Ky-F8t"/>
                         <outlet property="delegate" destination="-1" id="Fpa-gP-hem"/>
@@ -32,15 +35,20 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="LZM-wW-w3N" secondAttribute="trailing" id="67k-sg-Jh3"/>
-                <constraint firstItem="LZM-wW-w3N" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="EjA-mj-moL"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="LZM-wW-w3N" secondAttribute="bottom" id="Pso-Q1-aE8"/>
-                <constraint firstItem="LZM-wW-w3N" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ckX-Jj-oUU"/>
+                <constraint firstItem="LZM-wW-w3N" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3vZ-7V-ybd"/>
+                <constraint firstItem="Jd9-3j-pmk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5KZ-hx-Jpa"/>
+                <constraint firstItem="Jd9-3j-pmk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="RL3-7V-Ktz"/>
+                <constraint firstItem="LZM-wW-w3N" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="UU2-Sl-tW6"/>
+                <constraint firstAttribute="bottom" secondItem="Jd9-3j-pmk" secondAttribute="bottom" id="V9B-BP-eaa"/>
+                <constraint firstItem="Jd9-3j-pmk" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Vfy-LI-TQe"/>
+                <constraint firstAttribute="bottom" secondItem="LZM-wW-w3N" secondAttribute="bottom" id="aFc-kf-hAo"/>
+                <constraint firstItem="LZM-wW-w3N" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="gIp-fJ-o7Y"/>
             </constraints>
-            <point key="canvasLocation" x="98" y="21"/>
+            <point key="canvasLocation" x="96.92307692307692" y="20.616113744075829"/>
         </view>
     </objects>
     <resources>
+        <image name="bg" width="540" height="960"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

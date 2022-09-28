@@ -8,7 +8,13 @@
 import UIKit
 
 class CityTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var cityNameLbl: UILabel!
+    @IBOutlet weak var timeLbl: UILabel!
+    @IBOutlet weak var minMaxLbl: UILabel!
+    @IBOutlet weak var tempLbl: UILabel!
+    @IBOutlet weak var descLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="280" height="100"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="9"/>
+                                        <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
@@ -38,7 +38,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09:22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqT-CH-wjS">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09:22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqT-CH-wjS">
                                 <rect key="frame" x="10" y="25" width="33" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="EEE-eF-OAd"/>
@@ -95,7 +95,7 @@
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="9"/>
+                                <integer key="value" value="10"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
@@ -109,7 +109,14 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <point key="canvasLocation" x="-138.46153846153845" y="-90.639810426540279"/>
+            <connections>
+                <outlet property="cityNameLbl" destination="h97-zP-fij" id="ncw-e7-zuQ"/>
+                <outlet property="descLbl" destination="HKf-RZ-drs" id="Sd1-3J-8xk"/>
+                <outlet property="minMaxLbl" destination="6Kw-En-8Tq" id="jjY-rB-KsC"/>
+                <outlet property="tempLbl" destination="hhs-ub-4LT" id="2Qt-Oi-hem"/>
+                <outlet property="timeLbl" destination="bqT-CH-wjS" id="wsu-Hh-tBN"/>
+            </connections>
+            <point key="canvasLocation" x="-497" y="-184"/>
         </tableViewCell>
     </objects>
     <resources>
